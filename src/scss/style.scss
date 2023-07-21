@@ -30,6 +30,30 @@ body{
     }
   }
   & img{
-    object-fit: contain;
+    object-fit: cover;
   }
+}
+.filter-blur{
+  backdrop-filter: blur(5px);
+}
+.filter-brightness{
+  backdrop-filter: brightness(90%);
+}
+.filter-contrast{
+  backdrop-filter: contrast(20%);
+}
+.filter-grayscale{
+  backdrop-filter: grayscale(100%);
+}
+.filter-hue-rotate{
+  backdrop-filter: hue-rotate(120deg);
+}
+.filter-invert{
+  backdrop-filter: invert(100%);
+}
+.filter-sepia{
+  backdrop-filter: sepia(100%);
+}
+.filter-saturate{
+  backdrop-filter: saturate(100%);
 }
