@@ -9,18 +9,26 @@ export default function mosaic() {
   for (let i = 0; i < 100 / mosaicPer; i++) {
     for (let i = 0; i < 100 / mosaicPer; i++) {
       const elSpan = document.createElement("span");
-      const className = decideFilter();
-      if (className) elSpan.classList.add(className);
+      elSpan.classList.add(decideFilter());
       elSpan.style.width = mosaicPer + "%";
       elSpan.style.height = mosaicPer + "%";
       mosaic?.appendChild(elSpan);
     }
   }
+
   mosaic?.querySelectorAll("span").forEach(el => {
-    el.addEventListener("mouseover", (e: Event) => {
-      const target = e.currentTarget as HTMLElement;
-      if(target) changeFilter(target);
-    });
+    el.addEventListener("mouseover", () => changeFilter(el));
   });
+
+  const update = () => {
+
+    const num = Math.floor(Math.min((Math.random() * (100 / mosaicPer) ** 2 + 1), 400));
+    const target = mosaic?.querySelector("span:nth-child(" + num + ")") as HTMLElement;
+    changeFilter(target);
+
+    requestAnimationFrame(update);
+  }
+
+  requestAnimationFrame(update);
 
 }
