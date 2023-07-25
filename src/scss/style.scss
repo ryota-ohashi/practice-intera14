@@ -13,8 +13,8 @@ body{
   align-items: center;
   &_inner{
     position: relative;
-    width: 100vh;
-    height: 100vh;
+    width: min(100vw, 100vh);
+    height: min(100vw, 100vh);
     overflow: hidden;
   }
   &_mosaic_wrap{
