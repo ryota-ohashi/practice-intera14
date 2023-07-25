@@ -22,7 +22,7 @@ export default function mosaic() {
 
   const update = () => {
 
-    const num = Math.floor(Math.min((Math.random() * (100 / mosaicPer) ** 2 + 1), 400));
+    const num = Math.floor(Math.min((Math.random() * (100 / mosaicPer) ** 2 + 1), (100 / mosaicPer) ** 2));
     const target = mosaic?.querySelector("span:nth-child(" + num + ")") as HTMLElement;
     changeFilter(target);
 
