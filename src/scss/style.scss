@@ -1,21 +1,52 @@
 body{
   padding: 0;
   margin: 0;
-  overflow: hidden;
-}
-
-.kv{
   width: 100vw;
   height: 100vh;
   height: 100dvh;
+  overflow: hidden;
+  background-color: #e1eec3;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.kv{
+  width: min(calc(70vw + 40px), calc(70vh + 40px));
+  height: min(calc(70vw + 40px), calc(70vh + 40px));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+  position: relative;
+  &:before, &:after{
+    position: absolute;
+    content: "";
+    display: block;
+    width: min(25vw, 25vh);
+    height: min(25vw, 25vh);
+    background-color: #e1eec3;
+    z-index: 5;
+  }
+  &:before{
+    left: -20%;
+    top: -20%;
+    transform: rotate(45deg);
+    border-right: 1px solid #b5c09a;
+  }
+  &:after{
+    right: -20%;
+    bottom: -20%;
+    border-top: 1px solid #b5c09a;
+    transform: rotate(-45deg);
+  }
   &_inner{
     position: relative;
-    width: min(100vw, 100vh);
-    height: min(100vw, 100vh);
-    overflow: hidden;
+    width: min(70vw, 70vh);
+    height: min(70vw, 70vh);
+    background-image: url(https://source.unsplash.com/random/);
+    background-size: cover;
   }
   &_mosaic_wrap{
     position: absolute;
@@ -28,9 +59,6 @@ body{
     & span{
       display: block;
     }
-  }
-  & img{
-    object-fit: cover;
   }
 }
 .filter-blur{

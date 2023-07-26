@@ -10,7 +10,7 @@ const decideFilter = () => {
     "filter-saturate"
   ];
 
-  const num = Math.floor(Math.min((Math.random() * filters.length + 1), filters.length));
+  const num = Math.floor(Math.random() * filters.length);
   return filters[num];
 }
 
